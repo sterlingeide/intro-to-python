@@ -244,3 +244,33 @@ def order(food, drink="Soda"):
   print(msg)
 order('Pizza')
 order('Cheese Burger', 'Sprite')
+
+def get_cities(students):
+    '''return list of cities from the students list'''
+    result = []
+
+    for student in students:
+        if student.get("city"):
+            result.append(student.get("city"))
+        else:  
+            return ('error')
+    
+    return(result)
+
+
+print(get_cities(students))
+
+def get_names(students):
+    '''return list of cities from the students list'''
+    result = []
+    
+    for student in students:
+        if student.get("name"):
+            result.append(student.get("name"))
+        else:  
+            return ('error')
+    
+    return(result)
+
+
+print(get_names(students))
