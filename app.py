@@ -187,17 +187,41 @@ for i in range(len(nums)):
         print('this is 8')
         
 students = [
-    {
+    { 
         "name": "Kimmie",
-        'city': 'Atlanta'
+        "city": "Atlanta"
     },
-    {
+    { 
+        "name": "Chris",
+        "city": "Salt Lake City"
+    },
+    { 
+        "name": "Zack",
+        "city": "Los Angeles"
+    },
+     { 
         "name": "John",
-        'city': 'LA'
+        "city": "Atlanta"
     },
-    {
-        "name": "Sammie",
-        'city': 'Boston'
+    { 
+        "name": "Jane",
+        "city": "New York"
+    },
+    { 
+        "name": "Rob",
+        "city": "Los Angeles"
+    },
+     { 
+        "name": "Harper",
+        "city": "Washington"
+    },
+    { 
+        "name": "Mike",
+        "city": "Seattle"
+    },
+    { 
+        "name": "Set",
+        "city": "San Francisco"
     },
 ]
 for i in range(len(students)):
@@ -257,7 +281,6 @@ def get_cities(students):
     
     return(result)
 
-
 print(get_cities(students))
 
 def get_names(students):
@@ -272,5 +295,21 @@ def get_names(students):
     
     return(result)
 
-
 print(get_names(students))
+
+def parse_by_cities(students):
+    result = {}
+    
+    for student in students:
+        if student.get('city'):
+            if result.get(student.get('city')):
+                #exists already
+                result[student.get('city')].append(student.get("name"))
+            else:
+                #doesnt exist
+                result[student.get('city')] = []
+                result[student.get('city')].append(student.get("name"))
+
+    return result
+
+print(parse_by_cities(students))
